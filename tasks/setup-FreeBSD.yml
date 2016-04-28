@@ -3,4 +3,4 @@
   pkgng: pkg=curl state=present
 
 - name: Ensure Jenkins is installed.
-  pkgng: pkg=jenkins state=present
+  pkgng: "pkg={{ jenkins_package }} state=present"

@@ -11,3 +11,4 @@ jenkins_plugins:
 jenkins_url_prefix: ""
 jenkins_plugins_dir: "{% if ansible_os_family == 'FreeBSD' %}/usr/local/jenkins/plugins{% else %}/var/lib/jenkins/plugins{% endif %}"
 jenkins_updates_dir: "{% if ansible_os_family == 'FreeBSD' %}/usr/local/jenkins/updates{% else %}/var/lib/jenkins/updates{% endif %}"
+jenkins_package: jenkins
