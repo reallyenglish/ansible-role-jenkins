@@ -8,12 +8,10 @@
   register: jenkins_init_config
   when: ansible_os_family == 'Debian' or ansible_os_family == 'RedHat'
 
-- name: Ensure URL prefix is present in Jenkins config.
-  lineinfile:
+- name: Ensure jenkins_java_opts is present in Jenkins config.
+  template:
     dest: "{{ jenkins_init_file }}"
-    insertafter: '^JENKINS_ARGS='
-    regexp: '^jenkins_args\=" --prefix='
-    line: 'jenkins_args=" --prefix={{ jenkins_url_prefix }} --httpPort={{ jenkins_http_port }}"'
+    src: jenkins.rc.FreeBSD.j2
   register: jenkins_init_config
   when: ansible_os_family == 'FreeBSD'
 

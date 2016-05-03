@@ -8,7 +8,11 @@ jenkins_plugins:
   - git
   - sonar
   - ssh
-jenkins_url_prefix: ""
+jenkins_url_prefix: "/"
 jenkins_plugins_dir: "{% if ansible_os_family == 'FreeBSD' %}/usr/local/jenkins/plugins{% else %}/var/lib/jenkins/plugins{% endif %}"
 jenkins_updates_dir: "{% if ansible_os_family == 'FreeBSD' %}/usr/local/jenkins/updates{% else %}/var/lib/jenkins/updates{% endif %}"
 jenkins_package: jenkins
+jenkins_user: jenkins
+jenkins_group: jenkins
+jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
+jenkins_options:

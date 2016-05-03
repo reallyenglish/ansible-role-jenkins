@@ -1,4 +1,4 @@
 ---
 __jenkins_repo_url: ""
 __jenkins_repo_key_url: ""
-jenkins_init_file: /etc/rc.conf
+jenkins_init_file: "/etc/rc.conf.d/jenkins"

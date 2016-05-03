@@ -1,5 +1,14 @@
 - hosts: all
+  pre_tasks:
+    # XXX the latest jenkins2 is not available in the official repo
+    - shell: mkdir -p /usr/local/etc/pkg/repos
+      changed_when: false
+    - shell: "echo 'FreeBSD: { enabled:  no }' > /usr/local/etc/pkg/repos/FreeBSD.conf"
+      changed_when: false
+    - shell: "echo 'reallyenglish: { url: \"pkg+http://10.3.build.reallyenglish.com/${ABI}\", mirror_type: \"srv\", signature_type: \"none\", enabled:  yes }' > /usr/local/etc/pkg/repos/reallyenglish.conf"
+      changed_when: false
   roles:
     - ansible-role-java
     - ansible-role-jenkins
   vars:
+    jenkins_package: jenkins2
