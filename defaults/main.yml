@@ -14,5 +14,5 @@ jenkins_updates_dir: "{% if ansible_os_family == 'FreeBSD' %}/usr/local/jenkins/
 jenkins_package: jenkins
 jenkins_user: jenkins
 jenkins_group: jenkins
-jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
+jenkins_java_options: "-Dhudson.model.UsageStatistics.disabled=true -Djenkins.install.runSetupWizard=false"
 jenkins_options:
