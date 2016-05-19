@@ -11,4 +11,4 @@
     - ansible-role-java
     - ansible-role-jenkins
   vars:
-    jenkins_package: jenkins2
+    jenkins_package: jenkins

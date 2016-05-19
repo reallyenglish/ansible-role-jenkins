@@ -13,7 +13,7 @@ jenkins_cli         = '/opt/jenkins-cli.jar -s http://localhost:8080/'
 case os[:family]
 when 'freebsd'
   jenkins_cli         = 'java -jar /usr/local/bin/jenkins-cli.jar -s http://localhost:8080/'
-  jenkins_package_name = 'jenkins2'
+  jenkins_package_name = 'jenkins'
 end
 
 describe package(jenkins_package_name) do
